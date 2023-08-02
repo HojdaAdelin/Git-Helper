@@ -18,9 +18,21 @@
     <ClCompile Include="MyForm.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="RepoWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RepoStatus.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RepoWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Include.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

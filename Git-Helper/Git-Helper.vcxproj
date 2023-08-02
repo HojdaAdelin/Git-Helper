@@ -125,15 +125,24 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="RepoWindow.cpp" />
+    <ClCompile Include="src\RepoStatus.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="RepoWindow.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="src\Include.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RepoWindow.resx">
+      <DependentUpon>RepoWindow.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
