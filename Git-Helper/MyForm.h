@@ -142,14 +142,16 @@ namespace GitHelper {
 			// sourceToolStripMenuItem
 			// 
 			this->sourceToolStripMenuItem->Name = L"sourceToolStripMenuItem";
-			this->sourceToolStripMenuItem->Size = System::Drawing::Size(299, 48);
+			this->sourceToolStripMenuItem->Size = System::Drawing::Size(359, 48);
 			this->sourceToolStripMenuItem->Text = L"Source";
+			this->sourceToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::sourceToolStripMenuItem_Click);
 			// 
 			// changeLogToolStripMenuItem
 			// 
 			this->changeLogToolStripMenuItem->Name = L"changeLogToolStripMenuItem";
-			this->changeLogToolStripMenuItem->Size = System::Drawing::Size(299, 48);
+			this->changeLogToolStripMenuItem->Size = System::Drawing::Size(359, 48);
 			this->changeLogToolStripMenuItem->Text = L"Change log";
+			this->changeLogToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::changeLogToolStripMenuItem_Click);
 			// 
 			// exitToolStripMenuItem
 			// 
@@ -168,7 +170,7 @@ namespace GitHelper {
 			this->gitToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.875F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->gitToolStripMenuItem->Name = L"gitToolStripMenuItem";
-			this->gitToolStripMenuItem->Size = System::Drawing::Size(74, 48);
+			this->gitToolStripMenuItem->Size = System::Drawing::Size(74, 44);
 			this->gitToolStripMenuItem->Text = L"Git";
 			// 
 			// historyToolStripMenuItem
@@ -216,7 +218,7 @@ namespace GitHelper {
 			this->outputToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.875F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->outputToolStripMenuItem->Name = L"outputToolStripMenuItem";
-			this->outputToolStripMenuItem->Size = System::Drawing::Size(128, 48);
+			this->outputToolStripMenuItem->Size = System::Drawing::Size(128, 44);
 			this->outputToolStripMenuItem->Text = L"Output";
 			// 
 			// defaultColorToolStripMenuItem
@@ -423,6 +425,16 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void exitToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 
 	this->Close();
+
+}
+private: System::Void sourceToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	openSite("https://github.com/HojdaAdelin/Git-Helper");
+
+}
+private: System::Void changeLogToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	MessageBox::Show("Git Helper", "Version 1.0");
 
 }
 };
