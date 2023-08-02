@@ -126,6 +126,7 @@
   <ItemGroup>
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="RepoWindow.cpp" />
+    <ClCompile Include="src\CommitPush.cpp" />
     <ClCompile Include="src\RepoStatus.cpp" />
   </ItemGroup>
   <ItemGroup>

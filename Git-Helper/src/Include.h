@@ -5,5 +5,7 @@
 using namespace msclr::interop;
 using namespace System;
 
+
 std::string getRepoStatus(std::string repoName);
 std::string ConvertString(String^ str);
+std::string commitPushFunction(std::string repoLocation, std::string message);
