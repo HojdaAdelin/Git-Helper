@@ -378,6 +378,7 @@ namespace GitHelper {
 
 		systemString = gcnew String(getRepoStatus(convert_systemString).c_str());
 		statusLabel->Text = System::String::Concat("Status:\n", systemString);
+		label1->Text = getRepo;
 	}
 private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 }
