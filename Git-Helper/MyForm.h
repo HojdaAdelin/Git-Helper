@@ -123,7 +123,7 @@ namespace GitHelper {
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(1447, 52);
+			this->menuStrip1->Size = System::Drawing::Size(1447, 48);
 			this->menuStrip1->TabIndex = 0;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -136,7 +136,7 @@ namespace GitHelper {
 			this->homeToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.875F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->homeToolStripMenuItem->Name = L"homeToolStripMenuItem";
-			this->homeToolStripMenuItem->Size = System::Drawing::Size(115, 48);
+			this->homeToolStripMenuItem->Size = System::Drawing::Size(115, 44);
 			this->homeToolStripMenuItem->Text = L"Home";
 			// 
 			// sourceToolStripMenuItem
@@ -154,8 +154,9 @@ namespace GitHelper {
 			// exitToolStripMenuItem
 			// 
 			this->exitToolStripMenuItem->Name = L"exitToolStripMenuItem";
-			this->exitToolStripMenuItem->Size = System::Drawing::Size(299, 48);
+			this->exitToolStripMenuItem->Size = System::Drawing::Size(359, 48);
 			this->exitToolStripMenuItem->Text = L"Exit";
+			this->exitToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::exitToolStripMenuItem_Click);
 			// 
 			// gitToolStripMenuItem
 			// 
@@ -418,6 +419,11 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	importOutput = gcnew String(commitPushFunction(repolocation_convert, getmessage_convert).c_str());
 
 	outputBox->Text = importOutput;
+}
+private: System::Void exitToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	this->Close();
+
 }
 };
 }
