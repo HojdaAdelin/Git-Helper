@@ -12,8 +12,8 @@ std::string commitPushFunction(std::string repoLocation, std::string message) {
 	writeCommand << "pushd ." << "\n";
 	writeCommand << "cd " + repoLocation << "\n";
 	writeCommand << "git add ." << "\n";
-	writeCommand << "git commit -m '" + message + "'" << "\n";
-	writeCommand << "git push > output.log 2>&1" << "\n";
+	writeCommand << "git commit -m \"" + message + "\"" + " > output.log 2>&1" << "\n";
+	writeCommand << "git push >> output.log 2>&1" << "\n";
 	writeCommand << "popd" << "\n";
 	writeCommand << "move /Y " + repoLocation + "\\output.log" << "\n";
 

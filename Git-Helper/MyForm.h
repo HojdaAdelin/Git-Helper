@@ -87,11 +87,14 @@ namespace GitHelper {
 			this->homeToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->sourceToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->changeLogToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->exitToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->gitToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->historyToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->pullToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->githubToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->gitWebToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->createRepoToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->cloneToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->outputToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->defaultColorToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->redColorToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -107,9 +110,6 @@ namespace GitHelper {
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->outputBox = (gcnew System::Windows::Forms::TextBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->exitToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->createRepoToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->cloneToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -136,20 +136,26 @@ namespace GitHelper {
 			this->homeToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.875F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->homeToolStripMenuItem->Name = L"homeToolStripMenuItem";
-			this->homeToolStripMenuItem->Size = System::Drawing::Size(115, 44);
+			this->homeToolStripMenuItem->Size = System::Drawing::Size(115, 48);
 			this->homeToolStripMenuItem->Text = L"Home";
 			// 
 			// sourceToolStripMenuItem
 			// 
 			this->sourceToolStripMenuItem->Name = L"sourceToolStripMenuItem";
-			this->sourceToolStripMenuItem->Size = System::Drawing::Size(359, 48);
+			this->sourceToolStripMenuItem->Size = System::Drawing::Size(299, 48);
 			this->sourceToolStripMenuItem->Text = L"Source";
 			// 
 			// changeLogToolStripMenuItem
 			// 
 			this->changeLogToolStripMenuItem->Name = L"changeLogToolStripMenuItem";
-			this->changeLogToolStripMenuItem->Size = System::Drawing::Size(359, 48);
+			this->changeLogToolStripMenuItem->Size = System::Drawing::Size(299, 48);
 			this->changeLogToolStripMenuItem->Text = L"Change log";
+			// 
+			// exitToolStripMenuItem
+			// 
+			this->exitToolStripMenuItem->Name = L"exitToolStripMenuItem";
+			this->exitToolStripMenuItem->Size = System::Drawing::Size(299, 48);
+			this->exitToolStripMenuItem->Text = L"Exit";
 			// 
 			// gitToolStripMenuItem
 			// 
@@ -161,32 +167,44 @@ namespace GitHelper {
 			this->gitToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.875F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->gitToolStripMenuItem->Name = L"gitToolStripMenuItem";
-			this->gitToolStripMenuItem->Size = System::Drawing::Size(74, 44);
+			this->gitToolStripMenuItem->Size = System::Drawing::Size(74, 48);
 			this->gitToolStripMenuItem->Text = L"Git";
 			// 
 			// historyToolStripMenuItem
 			// 
 			this->historyToolStripMenuItem->Name = L"historyToolStripMenuItem";
-			this->historyToolStripMenuItem->Size = System::Drawing::Size(359, 48);
+			this->historyToolStripMenuItem->Size = System::Drawing::Size(303, 48);
 			this->historyToolStripMenuItem->Text = L"History";
 			// 
 			// pullToolStripMenuItem
 			// 
 			this->pullToolStripMenuItem->Name = L"pullToolStripMenuItem";
-			this->pullToolStripMenuItem->Size = System::Drawing::Size(359, 48);
+			this->pullToolStripMenuItem->Size = System::Drawing::Size(303, 48);
 			this->pullToolStripMenuItem->Text = L"Pull";
 			// 
 			// githubToolStripMenuItem
 			// 
 			this->githubToolStripMenuItem->Name = L"githubToolStripMenuItem";
-			this->githubToolStripMenuItem->Size = System::Drawing::Size(359, 48);
+			this->githubToolStripMenuItem->Size = System::Drawing::Size(303, 48);
 			this->githubToolStripMenuItem->Text = L"Github";
 			// 
 			// gitWebToolStripMenuItem
 			// 
 			this->gitWebToolStripMenuItem->Name = L"gitWebToolStripMenuItem";
-			this->gitWebToolStripMenuItem->Size = System::Drawing::Size(359, 48);
+			this->gitWebToolStripMenuItem->Size = System::Drawing::Size(303, 48);
 			this->gitWebToolStripMenuItem->Text = L"Git web";
+			// 
+			// createRepoToolStripMenuItem
+			// 
+			this->createRepoToolStripMenuItem->Name = L"createRepoToolStripMenuItem";
+			this->createRepoToolStripMenuItem->Size = System::Drawing::Size(303, 48);
+			this->createRepoToolStripMenuItem->Text = L"Create repo";
+			// 
+			// cloneToolStripMenuItem
+			// 
+			this->cloneToolStripMenuItem->Name = L"cloneToolStripMenuItem";
+			this->cloneToolStripMenuItem->Size = System::Drawing::Size(303, 48);
+			this->cloneToolStripMenuItem->Text = L"Clone";
 			// 
 			// outputToolStripMenuItem
 			// 
@@ -197,31 +215,31 @@ namespace GitHelper {
 			this->outputToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.875F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->outputToolStripMenuItem->Name = L"outputToolStripMenuItem";
-			this->outputToolStripMenuItem->Size = System::Drawing::Size(128, 44);
+			this->outputToolStripMenuItem->Size = System::Drawing::Size(128, 48);
 			this->outputToolStripMenuItem->Text = L"Output";
 			// 
 			// defaultColorToolStripMenuItem
 			// 
 			this->defaultColorToolStripMenuItem->Name = L"defaultColorToolStripMenuItem";
-			this->defaultColorToolStripMenuItem->Size = System::Drawing::Size(359, 48);
+			this->defaultColorToolStripMenuItem->Size = System::Drawing::Size(317, 48);
 			this->defaultColorToolStripMenuItem->Text = L"Default color";
 			// 
 			// redColorToolStripMenuItem
 			// 
 			this->redColorToolStripMenuItem->Name = L"redColorToolStripMenuItem";
-			this->redColorToolStripMenuItem->Size = System::Drawing::Size(359, 48);
+			this->redColorToolStripMenuItem->Size = System::Drawing::Size(317, 48);
 			this->redColorToolStripMenuItem->Text = L"Red color";
 			// 
 			// blueColorToolStripMenuItem
 			// 
 			this->blueColorToolStripMenuItem->Name = L"blueColorToolStripMenuItem";
-			this->blueColorToolStripMenuItem->Size = System::Drawing::Size(359, 48);
+			this->blueColorToolStripMenuItem->Size = System::Drawing::Size(317, 48);
 			this->blueColorToolStripMenuItem->Text = L"Blue color";
 			// 
 			// greenColorToolStripMenuItem
 			// 
 			this->greenColorToolStripMenuItem->Name = L"greenColorToolStripMenuItem";
-			this->greenColorToolStripMenuItem->Size = System::Drawing::Size(359, 48);
+			this->greenColorToolStripMenuItem->Size = System::Drawing::Size(317, 48);
 			this->greenColorToolStripMenuItem->Text = L"Green color";
 			// 
 			// addRepo
@@ -324,7 +342,6 @@ namespace GitHelper {
 			this->outputBox->Name = L"outputBox";
 			this->outputBox->Size = System::Drawing::Size(456, 351);
 			this->outputBox->TabIndex = 11;
-			this->outputBox->WordWrap = false;
 			// 
 			// button1
 			// 
@@ -337,24 +354,6 @@ namespace GitHelper {
 			this->button1->Text = L"Commit + Push";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
-			// 
-			// exitToolStripMenuItem
-			// 
-			this->exitToolStripMenuItem->Name = L"exitToolStripMenuItem";
-			this->exitToolStripMenuItem->Size = System::Drawing::Size(359, 48);
-			this->exitToolStripMenuItem->Text = L"Exit";
-			// 
-			// createRepoToolStripMenuItem
-			// 
-			this->createRepoToolStripMenuItem->Name = L"createRepoToolStripMenuItem";
-			this->createRepoToolStripMenuItem->Size = System::Drawing::Size(359, 48);
-			this->createRepoToolStripMenuItem->Text = L"Create repo";
-			// 
-			// cloneToolStripMenuItem
-			// 
-			this->cloneToolStripMenuItem->Name = L"cloneToolStripMenuItem";
-			this->cloneToolStripMenuItem->Size = System::Drawing::Size(359, 48);
-			this->cloneToolStripMenuItem->Text = L"Clone";
 			// 
 			// MyForm
 			// 
