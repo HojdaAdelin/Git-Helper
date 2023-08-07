@@ -48,11 +48,11 @@ namespace GitHelper {
 	private: System::Windows::Forms::ToolStripMenuItem^ pullToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ githubToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ gitWebToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ outputToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ defaultColorToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ redColorToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ blueColorToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ greenColorToolStripMenuItem;
+
+
+
+
+
 	private: System::Windows::Forms::Button^ addRepo;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ statusLabel;
@@ -95,11 +95,6 @@ namespace GitHelper {
 			this->gitWebToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->createRepoToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->cloneToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->outputToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->defaultColorToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->redColorToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->blueColorToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->greenColorToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->addRepo = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->statusLabel = (gcnew System::Windows::Forms::Label());
@@ -117,9 +112,9 @@ namespace GitHelper {
 			// 
 			this->menuStrip1->GripMargin = System::Windows::Forms::Padding(2, 2, 0, 2);
 			this->menuStrip1->ImageScalingSize = System::Drawing::Size(32, 32);
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
 				this->homeToolStripMenuItem,
-					this->gitToolStripMenuItem, this->outputToolStripMenuItem
+					this->gitToolStripMenuItem
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
@@ -211,44 +206,6 @@ namespace GitHelper {
 			this->cloneToolStripMenuItem->Size = System::Drawing::Size(303, 48);
 			this->cloneToolStripMenuItem->Text = L"Clone";
 			this->cloneToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::cloneToolStripMenuItem_Click);
-			// 
-			// outputToolStripMenuItem
-			// 
-			this->outputToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
-				this->defaultColorToolStripMenuItem,
-					this->redColorToolStripMenuItem, this->blueColorToolStripMenuItem, this->greenColorToolStripMenuItem
-			});
-			this->outputToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.875F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->outputToolStripMenuItem->Name = L"outputToolStripMenuItem";
-			this->outputToolStripMenuItem->Size = System::Drawing::Size(128, 44);
-			this->outputToolStripMenuItem->Text = L"Output";
-			// 
-			// defaultColorToolStripMenuItem
-			// 
-			this->defaultColorToolStripMenuItem->Name = L"defaultColorToolStripMenuItem";
-			this->defaultColorToolStripMenuItem->Size = System::Drawing::Size(359, 48);
-			this->defaultColorToolStripMenuItem->Text = L"Default color";
-			this->defaultColorToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::defaultColorToolStripMenuItem_Click);
-			// 
-			// redColorToolStripMenuItem
-			// 
-			this->redColorToolStripMenuItem->Name = L"redColorToolStripMenuItem";
-			this->redColorToolStripMenuItem->Size = System::Drawing::Size(359, 48);
-			this->redColorToolStripMenuItem->Text = L"Red color";
-			this->redColorToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::redColorToolStripMenuItem_Click);
-			// 
-			// blueColorToolStripMenuItem
-			// 
-			this->blueColorToolStripMenuItem->Name = L"blueColorToolStripMenuItem";
-			this->blueColorToolStripMenuItem->Size = System::Drawing::Size(359, 48);
-			this->blueColorToolStripMenuItem->Text = L"Blue color";
-			// 
-			// greenColorToolStripMenuItem
-			// 
-			this->greenColorToolStripMenuItem->Name = L"greenColorToolStripMenuItem";
-			this->greenColorToolStripMenuItem->Size = System::Drawing::Size(359, 48);
-			this->greenColorToolStripMenuItem->Text = L"Green color";
 			// 
 			// addRepo
 			// 
@@ -345,11 +302,13 @@ namespace GitHelper {
 			this->outputBox->Enabled = false;
 			this->outputBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.875F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->outputBox->ForeColor = System::Drawing::SystemColors::HotTrack;
 			this->outputBox->Location = System::Drawing::Point(963, 427);
 			this->outputBox->Multiline = true;
 			this->outputBox->Name = L"outputBox";
 			this->outputBox->Size = System::Drawing::Size(456, 351);
 			this->outputBox->TabIndex = 11;
+			this->outputBox->TextChanged += gcnew System::EventHandler(this, &MyForm::outputBox_TextChanged);
 			// 
 			// button1
 			// 
@@ -491,8 +450,10 @@ private: System::Void defaultColorToolStripMenuItem_Click(System::Object^ sender
 }
 private: System::Void redColorToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 
-	outputBox->ForeColor = Color::Red;
+	outputBox->ForeColor = System::Drawing::Color::Red;
 
+}
+private: System::Void outputBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
