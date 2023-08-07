@@ -176,39 +176,39 @@ namespace GitHelper {
 			// historyToolStripMenuItem
 			// 
 			this->historyToolStripMenuItem->Name = L"historyToolStripMenuItem";
-			this->historyToolStripMenuItem->Size = System::Drawing::Size(359, 48);
+			this->historyToolStripMenuItem->Size = System::Drawing::Size(303, 48);
 			this->historyToolStripMenuItem->Text = L"History";
 			// 
 			// pullToolStripMenuItem
 			// 
 			this->pullToolStripMenuItem->Name = L"pullToolStripMenuItem";
-			this->pullToolStripMenuItem->Size = System::Drawing::Size(359, 48);
+			this->pullToolStripMenuItem->Size = System::Drawing::Size(303, 48);
 			this->pullToolStripMenuItem->Text = L"Pull";
 			// 
 			// githubToolStripMenuItem
 			// 
 			this->githubToolStripMenuItem->Name = L"githubToolStripMenuItem";
-			this->githubToolStripMenuItem->Size = System::Drawing::Size(359, 48);
+			this->githubToolStripMenuItem->Size = System::Drawing::Size(303, 48);
 			this->githubToolStripMenuItem->Text = L"Github";
 			this->githubToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::githubToolStripMenuItem_Click);
 			// 
 			// gitWebToolStripMenuItem
 			// 
 			this->gitWebToolStripMenuItem->Name = L"gitWebToolStripMenuItem";
-			this->gitWebToolStripMenuItem->Size = System::Drawing::Size(359, 48);
+			this->gitWebToolStripMenuItem->Size = System::Drawing::Size(303, 48);
 			this->gitWebToolStripMenuItem->Text = L"Git web";
 			this->gitWebToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::gitWebToolStripMenuItem_Click);
 			// 
 			// createRepoToolStripMenuItem
 			// 
 			this->createRepoToolStripMenuItem->Name = L"createRepoToolStripMenuItem";
-			this->createRepoToolStripMenuItem->Size = System::Drawing::Size(359, 48);
+			this->createRepoToolStripMenuItem->Size = System::Drawing::Size(303, 48);
 			this->createRepoToolStripMenuItem->Text = L"Create repo";
 			// 
 			// cloneToolStripMenuItem
 			// 
 			this->cloneToolStripMenuItem->Name = L"cloneToolStripMenuItem";
-			this->cloneToolStripMenuItem->Size = System::Drawing::Size(359, 48);
+			this->cloneToolStripMenuItem->Size = System::Drawing::Size(303, 48);
 			this->cloneToolStripMenuItem->Text = L"Clone";
 			this->cloneToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::cloneToolStripMenuItem_Click);
 			// 
@@ -227,25 +227,27 @@ namespace GitHelper {
 			// defaultColorToolStripMenuItem
 			// 
 			this->defaultColorToolStripMenuItem->Name = L"defaultColorToolStripMenuItem";
-			this->defaultColorToolStripMenuItem->Size = System::Drawing::Size(317, 48);
+			this->defaultColorToolStripMenuItem->Size = System::Drawing::Size(359, 48);
 			this->defaultColorToolStripMenuItem->Text = L"Default color";
+			this->defaultColorToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::defaultColorToolStripMenuItem_Click);
 			// 
 			// redColorToolStripMenuItem
 			// 
 			this->redColorToolStripMenuItem->Name = L"redColorToolStripMenuItem";
-			this->redColorToolStripMenuItem->Size = System::Drawing::Size(317, 48);
+			this->redColorToolStripMenuItem->Size = System::Drawing::Size(359, 48);
 			this->redColorToolStripMenuItem->Text = L"Red color";
+			this->redColorToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::redColorToolStripMenuItem_Click);
 			// 
 			// blueColorToolStripMenuItem
 			// 
 			this->blueColorToolStripMenuItem->Name = L"blueColorToolStripMenuItem";
-			this->blueColorToolStripMenuItem->Size = System::Drawing::Size(317, 48);
+			this->blueColorToolStripMenuItem->Size = System::Drawing::Size(359, 48);
 			this->blueColorToolStripMenuItem->Text = L"Blue color";
 			// 
 			// greenColorToolStripMenuItem
 			// 
 			this->greenColorToolStripMenuItem->Name = L"greenColorToolStripMenuItem";
-			this->greenColorToolStripMenuItem->Size = System::Drawing::Size(317, 48);
+			this->greenColorToolStripMenuItem->Size = System::Drawing::Size(359, 48);
 			this->greenColorToolStripMenuItem->Text = L"Green color";
 			// 
 			// addRepo
@@ -437,7 +439,7 @@ private: System::Void sourceToolStripMenuItem_Click(System::Object^ sender, Syst
 }
 private: System::Void changeLogToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 
-	MessageBox::Show("Git Helper", "Version 1.0");
+	MessageBox::Show("Version 1.0", "Git Helper");
 
 }
 private: System::Void githubToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -466,12 +468,12 @@ private: System::Void cloneToolStripMenuItem_Click(System::Object^ sender, Syste
 		convert_location = ConvertString(location);
 		if (cloneRepo(convert_link, convert_location) == true) {
 
-			MessageBox::Show("Repository cloned!");
+			MessageBox::Show("Repository cloned!", "Git Helper");
 
 		}
 		else {
 
-			MessageBox::Show("Error while cloning!");
+			MessageBox::Show("Error while cloning!", "Git Helper");
 
 		}
 
@@ -481,6 +483,16 @@ private: System::Void cloneToolStripMenuItem_Click(System::Object^ sender, Syste
 		newCloneRepository->Close();
 
 	}
+}
+private: System::Void defaultColorToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	outputBox->ForeColor = Color::Black;
+
+}
+private: System::Void redColorToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	outputBox->ForeColor = Color::Red;
+
 }
 };
 }
