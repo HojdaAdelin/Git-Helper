@@ -1,6 +1,7 @@
 #pragma once
 #include <msclr/marshal_cppstd.h>
 #include <msclr/marshal.h>
+#include "GitFunctions/GitInclude.h"
 
 using namespace msclr::interop;
 using namespace System;

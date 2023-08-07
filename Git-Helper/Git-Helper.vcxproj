@@ -127,6 +127,8 @@
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="RepoWindow.cpp" />
     <ClCompile Include="src\CommitPush.cpp" />
+    <ClCompile Include="src\GitFunctions\CloneRepo.cpp" />
+    <ClCompile Include="src\GitFunctions\CloneRepository.cpp" />
     <ClCompile Include="src\OpenSite.cpp" />
     <ClCompile Include="src\RepoStatus.cpp" />
   </ItemGroup>
@@ -137,6 +139,10 @@
     <ClInclude Include="RepoWindow.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="src\GitFunctions\CloneRepository.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="src\GitFunctions\GitInclude.h" />
     <ClInclude Include="src\Include.h" />
   </ItemGroup>
   <ItemGroup>
@@ -145,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RepoWindow.resx">
       <DependentUpon>RepoWindow.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\GitFunctions\CloneRepository.resx">
+      <DependentUpon>src\GitFunctions\CloneRepository.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

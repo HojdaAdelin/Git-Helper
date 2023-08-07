@@ -210,6 +210,7 @@ namespace GitHelper {
 			this->cloneToolStripMenuItem->Name = L"cloneToolStripMenuItem";
 			this->cloneToolStripMenuItem->Size = System::Drawing::Size(359, 48);
 			this->cloneToolStripMenuItem->Text = L"Clone";
+			this->cloneToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::cloneToolStripMenuItem_Click);
 			// 
 			// outputToolStripMenuItem
 			// 
@@ -448,6 +449,38 @@ private: System::Void gitWebToolStripMenuItem_Click(System::Object^ sender, Syst
 
 	openSite("https://git-scm.com/");
 
+}
+private: System::Void cloneToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	CloneRepository^ newCloneRepository = gcnew CloneRepository();
+	String^ link;
+	String^ location;
+	std::string convert_link;
+	std::string convert_location;
+	
+	if (newCloneRepository->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
+
+		link = newCloneRepository->repoLinkText->Text;
+		location = newCloneRepository->locationText->Text;
+		convert_link = ConvertString(link);
+		convert_location = ConvertString(location);
+		if (cloneRepo(convert_link, convert_location) == true) {
+
+			MessageBox::Show("Repository cloned!");
+
+		}
+		else {
+
+			MessageBox::Show("Error while cloning!");
+
+		}
+
+	}
+	else {
+
+		newCloneRepository->Close();
+
+	}
 }
 };
 }
