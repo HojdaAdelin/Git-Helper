@@ -312,13 +312,13 @@ namespace GitHelper {
 			// outputBox
 			// 
 			this->outputBox->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->outputBox->Enabled = false;
 			this->outputBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.875F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->outputBox->ForeColor = System::Drawing::SystemColors::HotTrack;
 			this->outputBox->Location = System::Drawing::Point(963, 427);
 			this->outputBox->Multiline = true;
 			this->outputBox->Name = L"outputBox";
+			this->outputBox->ReadOnly = true;
 			this->outputBox->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
 			this->outputBox->Size = System::Drawing::Size(456, 351);
 			this->outputBox->TabIndex = 11;
