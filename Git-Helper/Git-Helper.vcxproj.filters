@@ -63,4 +63,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="src\Assets\location.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="src\Assets\message.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="src\Assets\output.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
 </Project>

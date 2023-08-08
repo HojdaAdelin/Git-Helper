@@ -164,6 +164,11 @@
       <DependentUpon>src\GitFunctions\CreateRepoForm.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="src\Assets\location.png" />
+    <Image Include="src\Assets\message.png" />
+    <Image Include="src\Assets\output.png" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
