@@ -129,6 +129,8 @@
     <ClCompile Include="src\CommitPush.cpp" />
     <ClCompile Include="src\GitFunctions\CloneRepo.cpp" />
     <ClCompile Include="src\GitFunctions\CloneRepository.cpp" />
+    <ClCompile Include="src\GitFunctions\CreateRepoForm.cpp" />
+    <ClCompile Include="src\GitFunctions\GitRepo.cpp" />
     <ClCompile Include="src\OpenSite.cpp" />
     <ClCompile Include="src\RepoStatus.cpp" />
   </ItemGroup>
@@ -140,6 +142,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="src\GitFunctions\CloneRepository.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="src\GitFunctions\CreateRepoForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="src\GitFunctions\GitInclude.h" />
@@ -154,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="src\GitFunctions\CloneRepository.resx">
       <DependentUpon>src\GitFunctions\CloneRepository.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\GitFunctions\CreateRepoForm.resx">
+      <DependentUpon>src\GitFunctions\CreateRepoForm.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

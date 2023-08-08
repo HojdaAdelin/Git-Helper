@@ -36,6 +36,12 @@
     <ClCompile Include="src\GitFunctions\CloneRepository.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\GitFunctions\GitRepo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GitFunctions\CreateRepoForm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -51,6 +57,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\GitFunctions\CloneRepository.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GitFunctions\CreateRepoForm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

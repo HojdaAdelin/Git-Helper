@@ -171,39 +171,40 @@ namespace GitHelper {
 			// historyToolStripMenuItem
 			// 
 			this->historyToolStripMenuItem->Name = L"historyToolStripMenuItem";
-			this->historyToolStripMenuItem->Size = System::Drawing::Size(303, 48);
+			this->historyToolStripMenuItem->Size = System::Drawing::Size(359, 48);
 			this->historyToolStripMenuItem->Text = L"History";
 			// 
 			// pullToolStripMenuItem
 			// 
 			this->pullToolStripMenuItem->Name = L"pullToolStripMenuItem";
-			this->pullToolStripMenuItem->Size = System::Drawing::Size(303, 48);
+			this->pullToolStripMenuItem->Size = System::Drawing::Size(359, 48);
 			this->pullToolStripMenuItem->Text = L"Pull";
 			// 
 			// githubToolStripMenuItem
 			// 
 			this->githubToolStripMenuItem->Name = L"githubToolStripMenuItem";
-			this->githubToolStripMenuItem->Size = System::Drawing::Size(303, 48);
+			this->githubToolStripMenuItem->Size = System::Drawing::Size(359, 48);
 			this->githubToolStripMenuItem->Text = L"Github";
 			this->githubToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::githubToolStripMenuItem_Click);
 			// 
 			// gitWebToolStripMenuItem
 			// 
 			this->gitWebToolStripMenuItem->Name = L"gitWebToolStripMenuItem";
-			this->gitWebToolStripMenuItem->Size = System::Drawing::Size(303, 48);
+			this->gitWebToolStripMenuItem->Size = System::Drawing::Size(359, 48);
 			this->gitWebToolStripMenuItem->Text = L"Git web";
 			this->gitWebToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::gitWebToolStripMenuItem_Click);
 			// 
 			// createRepoToolStripMenuItem
 			// 
 			this->createRepoToolStripMenuItem->Name = L"createRepoToolStripMenuItem";
-			this->createRepoToolStripMenuItem->Size = System::Drawing::Size(303, 48);
+			this->createRepoToolStripMenuItem->Size = System::Drawing::Size(359, 48);
 			this->createRepoToolStripMenuItem->Text = L"Create repo";
+			this->createRepoToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::createRepoToolStripMenuItem_Click);
 			// 
 			// cloneToolStripMenuItem
 			// 
 			this->cloneToolStripMenuItem->Name = L"cloneToolStripMenuItem";
-			this->cloneToolStripMenuItem->Size = System::Drawing::Size(303, 48);
+			this->cloneToolStripMenuItem->Size = System::Drawing::Size(359, 48);
 			this->cloneToolStripMenuItem->Text = L"Clone";
 			this->cloneToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::cloneToolStripMenuItem_Click);
 			// 
@@ -418,7 +419,7 @@ private: System::Void cloneToolStripMenuItem_Click(System::Object^ sender, Syste
 	String^ location;
 	std::string convert_link;
 	std::string convert_location;
-	
+
 	if (newCloneRepository->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
 
 		link = newCloneRepository->repoLinkText->Text;
@@ -454,6 +455,27 @@ private: System::Void redColorToolStripMenuItem_Click(System::Object^ sender, Sy
 
 }
 private: System::Void outputBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void createRepoToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	String^ location_repo;
+	std::string location_repo_convert;
+	CreateRepoForm^ newCreateRepoForm = gcnew CreateRepoForm();
+
+	if (newCreateRepoForm->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
+
+		location_repo = newCreateRepoForm->locationText->Text;
+		location_repo_convert = ConvertString(location_repo);
+		createRepo(location_repo_convert);
+		MessageBox::Show("Repository created!", "Git Helper");
+
+	}
+	else {
+
+		MessageBox::Show("Error while creating repository!", "Git Helper");
+
+	}
+
 }
 };
 }
