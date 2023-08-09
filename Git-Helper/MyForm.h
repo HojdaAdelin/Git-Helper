@@ -417,18 +417,20 @@ namespace GitHelper {
 
 		if (newRepoWindow->ShowDialog() == System::Windows::Forms::DialogResult::OK)
 		{
-
 			getRepo = newRepoWindow->repoText->Text;
-			
-
+		}
+		else {
+			newRepoWindow->Close();
 		}
 
-		convert_systemString = ConvertString(getRepo);
-
-		systemString = gcnew String(getRepoStatus(convert_systemString).c_str());
-		statusLabel->Text = System::String::Concat("Status:\n", systemString);
-		label1->Text = getRepo;
-		locationBox->Text = getRepo;
+		if (!String::IsNullOrEmpty(getRepo))
+		{
+			convert_systemString = ConvertString(getRepo);
+			systemString = gcnew String(getRepoStatus(convert_systemString).c_str());
+			statusLabel->Text = System::String::Concat("Status:\n", systemString);
+			label1->Text = getRepo;
+			locationBox->Text = getRepo;
+		}
 	}
 private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 }
