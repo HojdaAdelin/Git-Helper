@@ -76,6 +76,7 @@ namespace GitHelper {
 			// 
 			// textBox1
 			// 
+			this->textBox1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->textBox1->Location = System::Drawing::Point(142, 165);
@@ -85,6 +86,7 @@ namespace GitHelper {
 			// 
 			// button1
 			// 
+			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button1->Location = System::Drawing::Point(383, 252);
@@ -97,6 +99,7 @@ namespace GitHelper {
 			// 
 			// button2
 			// 
+			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button2->Location = System::Drawing::Point(142, 252);
@@ -120,6 +123,7 @@ namespace GitHelper {
 			this->MaximumSize = System::Drawing::Size(782, 623);
 			this->MinimumSize = System::Drawing::Size(782, 623);
 			this->Name = L"GitPull";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"GitPull";
 			this->ResumeLayout(false);
 			this->PerformLayout();
