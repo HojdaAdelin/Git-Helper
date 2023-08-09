@@ -85,5 +85,11 @@
     <Image Include="src\Assets\output.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="src\Assets\logo.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="src\Assets\logo.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

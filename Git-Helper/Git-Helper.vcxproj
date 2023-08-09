@@ -180,6 +180,8 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="src\Assets\location.png" />
+    <Image Include="src\Assets\logo.ico" />
+    <Image Include="src\Assets\logo.png" />
     <Image Include="src\Assets\message.png" />
     <Image Include="src\Assets\output.png" />
   </ItemGroup>

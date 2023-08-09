@@ -59,6 +59,7 @@ namespace GitHelper {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(CloneRepository::typeid));
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->repoLinkText = (gcnew System::Windows::Forms::TextBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
@@ -132,11 +133,12 @@ namespace GitHelper {
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->repoLinkText);
 			this->Controls->Add(this->label1);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximumSize = System::Drawing::Size(1285, 917);
 			this->MinimumSize = System::Drawing::Size(1285, 917);
 			this->Name = L"CloneRepository";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"CloneRepository";
+			this->Text = L"Git Helper - Clone";
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
