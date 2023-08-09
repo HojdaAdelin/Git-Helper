@@ -191,6 +191,7 @@ namespace GitHelper {
 			this->pullToolStripMenuItem->Name = L"pullToolStripMenuItem";
 			this->pullToolStripMenuItem->Size = System::Drawing::Size(359, 48);
 			this->pullToolStripMenuItem->Text = L"Pull";
+			this->pullToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::pullToolStripMenuItem_Click);
 			// 
 			// githubToolStripMenuItem
 			// 
@@ -547,6 +548,11 @@ private: System::Void historyToolStripMenuItem_Click(System::Object^ sender, Sys
 
 	newGitHistory->Show();
 
+}
+private: System::Void pullToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	GitPull^ newGitPull = gcnew GitPull();
+	newGitPull->Show();
 }
 };
 }

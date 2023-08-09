@@ -1,6 +1,6 @@
 @echo off
 pushd .
-cd %1
-git status > output.log
+cd "C:\Users\adeli\Git-Helper"
+git pull > output.log
 popd
-move /Y %2 .
+move /Y "C:\Users\adeli\Git-Helper\output.log" .

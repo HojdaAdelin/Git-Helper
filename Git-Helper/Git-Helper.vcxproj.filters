@@ -45,6 +45,9 @@
     <ClCompile Include="src\GitFunctions\GitHistory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\GitFunctions\GitPull.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -66,6 +69,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\GitFunctions\GitHistory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GitFunctions\GitPull.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
