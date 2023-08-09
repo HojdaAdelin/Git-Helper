@@ -130,6 +130,7 @@
     <ClCompile Include="src\GitFunctions\CloneRepo.cpp" />
     <ClCompile Include="src\GitFunctions\CloneRepository.cpp" />
     <ClCompile Include="src\GitFunctions\CreateRepoForm.cpp" />
+    <ClCompile Include="src\GitFunctions\GitHistory.cpp" />
     <ClCompile Include="src\GitFunctions\GitRepo.cpp" />
     <ClCompile Include="src\OpenSite.cpp" />
     <ClCompile Include="src\RepoStatus.cpp" />
@@ -147,6 +148,9 @@
     <ClInclude Include="src\GitFunctions\CreateRepoForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="src\GitFunctions\GitHistory.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="src\GitFunctions\GitInclude.h" />
     <ClInclude Include="src\Include.h" />
   </ItemGroup>
@@ -162,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="src\GitFunctions\CreateRepoForm.resx">
       <DependentUpon>src\GitFunctions\CreateRepoForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\GitFunctions\GitHistory.resx">
+      <DependentUpon>src\GitFunctions\GitHistory.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

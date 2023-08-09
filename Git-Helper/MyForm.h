@@ -141,7 +141,7 @@ namespace GitHelper {
 			this->homeToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.875F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->homeToolStripMenuItem->Name = L"homeToolStripMenuItem";
-			this->homeToolStripMenuItem->Size = System::Drawing::Size(115, 48);
+			this->homeToolStripMenuItem->Size = System::Drawing::Size(115, 44);
 			this->homeToolStripMenuItem->Text = L"Home";
 			// 
 			// sourceToolStripMenuItem
@@ -175,47 +175,48 @@ namespace GitHelper {
 			this->gitToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.875F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->gitToolStripMenuItem->Name = L"gitToolStripMenuItem";
-			this->gitToolStripMenuItem->Size = System::Drawing::Size(74, 48);
+			this->gitToolStripMenuItem->Size = System::Drawing::Size(74, 44);
 			this->gitToolStripMenuItem->Text = L"Git";
 			this->gitToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::gitToolStripMenuItem_Click);
 			// 
 			// historyToolStripMenuItem
 			// 
 			this->historyToolStripMenuItem->Name = L"historyToolStripMenuItem";
-			this->historyToolStripMenuItem->Size = System::Drawing::Size(303, 48);
-			this->historyToolStripMenuItem->Text = L"History";
+			this->historyToolStripMenuItem->Size = System::Drawing::Size(359, 48);
+			this->historyToolStripMenuItem->Text = L"Log";
+			this->historyToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::historyToolStripMenuItem_Click);
 			// 
 			// pullToolStripMenuItem
 			// 
 			this->pullToolStripMenuItem->Name = L"pullToolStripMenuItem";
-			this->pullToolStripMenuItem->Size = System::Drawing::Size(303, 48);
+			this->pullToolStripMenuItem->Size = System::Drawing::Size(359, 48);
 			this->pullToolStripMenuItem->Text = L"Pull";
 			// 
 			// githubToolStripMenuItem
 			// 
 			this->githubToolStripMenuItem->Name = L"githubToolStripMenuItem";
-			this->githubToolStripMenuItem->Size = System::Drawing::Size(303, 48);
+			this->githubToolStripMenuItem->Size = System::Drawing::Size(359, 48);
 			this->githubToolStripMenuItem->Text = L"Github";
 			this->githubToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::githubToolStripMenuItem_Click);
 			// 
 			// gitWebToolStripMenuItem
 			// 
 			this->gitWebToolStripMenuItem->Name = L"gitWebToolStripMenuItem";
-			this->gitWebToolStripMenuItem->Size = System::Drawing::Size(303, 48);
+			this->gitWebToolStripMenuItem->Size = System::Drawing::Size(359, 48);
 			this->gitWebToolStripMenuItem->Text = L"Git web";
 			this->gitWebToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::gitWebToolStripMenuItem_Click);
 			// 
 			// createRepoToolStripMenuItem
 			// 
 			this->createRepoToolStripMenuItem->Name = L"createRepoToolStripMenuItem";
-			this->createRepoToolStripMenuItem->Size = System::Drawing::Size(303, 48);
+			this->createRepoToolStripMenuItem->Size = System::Drawing::Size(359, 48);
 			this->createRepoToolStripMenuItem->Text = L"Create repo";
 			this->createRepoToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::createRepoToolStripMenuItem_Click);
 			// 
 			// cloneToolStripMenuItem
 			// 
 			this->cloneToolStripMenuItem->Name = L"cloneToolStripMenuItem";
-			this->cloneToolStripMenuItem->Size = System::Drawing::Size(303, 48);
+			this->cloneToolStripMenuItem->Size = System::Drawing::Size(359, 48);
 			this->cloneToolStripMenuItem->Text = L"Clone";
 			this->cloneToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::cloneToolStripMenuItem_Click);
 			// 
@@ -353,7 +354,7 @@ namespace GitHelper {
 			// 
 			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
 			this->pictureBox2->Location = System::Drawing::Point(1130, 229);
-			this->pictureBox2->Margin = System::Windows::Forms::Padding(0, 0, 0, 0);
+			this->pictureBox2->Margin = System::Windows::Forms::Padding(0);
 			this->pictureBox2->Name = L"pictureBox2";
 			this->pictureBox2->Size = System::Drawing::Size(100, 50);
 			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
@@ -536,6 +537,13 @@ private: System::Void gitToolStripMenuItem_Click(System::Object^ sender, System:
 private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void historyToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	GitHistory^ newGitHistory = gcnew GitHistory();
+
+	newGitHistory->Show();
+
 }
 };
 }

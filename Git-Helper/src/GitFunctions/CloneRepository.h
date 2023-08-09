@@ -123,6 +123,7 @@ namespace GitHelper {
 			// 
 			// CloneRepository
 			// 
+			this->AcceptButton = this->button1;
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1259, 846);

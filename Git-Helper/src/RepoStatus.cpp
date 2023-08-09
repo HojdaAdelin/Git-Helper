@@ -1,4 +1,5 @@
 #include "Include.h"
+#include "GitFunctions/GitHistory.h"
 #include <iostream>
 #include <fstream>
 #include <string>
