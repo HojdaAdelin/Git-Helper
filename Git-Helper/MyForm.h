@@ -26,6 +26,7 @@ namespace GitHelper {
 			//TODO: Add the constructor code here
 			//
 		}
+		System::Windows::Forms::Label^ lastDirGet;
 
 	protected:
 		/// <summary>
@@ -73,7 +74,6 @@ namespace GitHelper {
 	private: System::Windows::Forms::PictureBox^ pictureBox2;
 	private: System::Windows::Forms::PictureBox^ pictureBox3;
 	private: System::Windows::Forms::Button^ lastDir;
-	private: System::Windows::Forms::Label^ lastDirGet;
 
 	private:
 		/// <summary>
@@ -132,7 +132,7 @@ namespace GitHelper {
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(1447, 52);
+			this->menuStrip1->Size = System::Drawing::Size(1447, 48);
 			this->menuStrip1->TabIndex = 0;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -145,7 +145,7 @@ namespace GitHelper {
 			this->homeToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.875F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->homeToolStripMenuItem->Name = L"homeToolStripMenuItem";
-			this->homeToolStripMenuItem->Size = System::Drawing::Size(115, 48);
+			this->homeToolStripMenuItem->Size = System::Drawing::Size(115, 44);
 			this->homeToolStripMenuItem->Text = L"Home";
 			// 
 			// sourceToolStripMenuItem
@@ -179,7 +179,7 @@ namespace GitHelper {
 			this->gitToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.875F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->gitToolStripMenuItem->Name = L"gitToolStripMenuItem";
-			this->gitToolStripMenuItem->Size = System::Drawing::Size(74, 48);
+			this->gitToolStripMenuItem->Size = System::Drawing::Size(74, 44);
 			this->gitToolStripMenuItem->Text = L"Git";
 			this->gitToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::gitToolStripMenuItem_Click);
 			// 
@@ -378,6 +378,7 @@ namespace GitHelper {
 			// 
 			// lastDir
 			// 
+			this->lastDir->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->lastDir->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lastDir->Location = System::Drawing::Point(17, 61);
@@ -386,13 +387,14 @@ namespace GitHelper {
 			this->lastDir->TabIndex = 16;
 			this->lastDir->Text = L"Use last directory:";
 			this->lastDir->UseVisualStyleBackColor = true;
+			this->lastDir->Click += gcnew System::EventHandler(this, &MyForm::lastDir_Click);
 			// 
 			// lastDirGet
 			// 
 			this->lastDirGet->AutoSize = true;
 			this->lastDirGet->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lastDirGet->Location = System::Drawing::Point(265, 71);
+			this->lastDirGet->Location = System::Drawing::Point(250, 71);
 			this->lastDirGet->Name = L"lastDirGet";
 			this->lastDirGet->Size = System::Drawing::Size(0, 37);
 			this->lastDirGet->TabIndex = 17;
@@ -459,9 +461,16 @@ namespace GitHelper {
 			statusLabel->Text = System::String::Concat("Status:\n", systemString);
 			label1->Text = getRepo;
 			locationBox->Text = getRepo;
+			lastDirGet->Text = getRepo;
+			writeToFile(convert_systemString);
 		}
 	}
 private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
+
+	std::string getLocation = useLocation();
+	String^ convert_getLocation = gcnew String(getLocation.c_str());
+	lastDirGet->Text = convert_getLocation;
+
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 
@@ -594,6 +603,18 @@ private: System::Void pullToolStripMenuItem_Click(System::Object^ sender, System
 
 	GitPull^ newGitPull = gcnew GitPull();
 	newGitPull->Show();
+}
+private: System::Void lastDir_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	std::string location = useLocation();
+	String^ convert_location = gcnew String(location.c_str());
+
+	locationBox->Text = convert_location;
+	String^ systemString = gcnew String(getRepoStatus(location).c_str());
+	statusLabel->Text = System::String::Concat("Status:\n", systemString);
+	label1->Text = convert_location;
+
+
 }
 };
 }

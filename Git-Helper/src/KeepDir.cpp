@@ -17,7 +17,7 @@ std::string useLocation() {
 
 	std::string location;
 
-	std::ifstream read("dir.txt", std::ios::trunc);
+	std::ifstream read("dir.txt");
 
 	location.clear();
 

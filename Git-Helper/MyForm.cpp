@@ -10,6 +10,7 @@ void main(array<String^>^ args) {
 	Application::EnableVisualStyles();
 	GitHelper::MyForm frm;
 	Application::Run(% frm);
+	
 
 }
 
