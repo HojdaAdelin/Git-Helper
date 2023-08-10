@@ -55,7 +55,6 @@ namespace GitHelper {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(CreateRepoForm::typeid));
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->locationText = (gcnew System::Windows::Forms::TextBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
@@ -118,10 +117,10 @@ namespace GitHelper {
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->locationText);
 			this->Controls->Add(this->label2);
-			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximumSize = System::Drawing::Size(791, 626);
 			this->MinimumSize = System::Drawing::Size(791, 626);
 			this->Name = L"CreateRepoForm";
+			this->ShowIcon = false;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Git Helper - Create Repo";
 			this->ResumeLayout(false);

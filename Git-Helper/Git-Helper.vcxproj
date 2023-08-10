@@ -133,6 +133,7 @@
     <ClCompile Include="src\GitFunctions\GitHistory.cpp" />
     <ClCompile Include="src\GitFunctions\GitPull.cpp" />
     <ClCompile Include="src\GitFunctions\GitRepo.cpp" />
+    <ClCompile Include="src\KeepDir.cpp" />
     <ClCompile Include="src\OpenSite.cpp" />
     <ClCompile Include="src\RepoStatus.cpp" />
   </ItemGroup>

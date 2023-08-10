@@ -72,6 +72,8 @@ namespace GitHelper {
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private: System::Windows::Forms::PictureBox^ pictureBox2;
 	private: System::Windows::Forms::PictureBox^ pictureBox3;
+	private: System::Windows::Forms::Button^ lastDir;
+	private: System::Windows::Forms::Label^ lastDirGet;
 
 	private:
 		/// <summary>
@@ -112,6 +114,8 @@ namespace GitHelper {
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
+			this->lastDir = (gcnew System::Windows::Forms::Button());
+			this->lastDirGet = (gcnew System::Windows::Forms::Label());
 			this->menuStrip1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
@@ -128,7 +132,7 @@ namespace GitHelper {
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(1447, 48);
+			this->menuStrip1->Size = System::Drawing::Size(1447, 52);
 			this->menuStrip1->TabIndex = 0;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -141,7 +145,7 @@ namespace GitHelper {
 			this->homeToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.875F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->homeToolStripMenuItem->Name = L"homeToolStripMenuItem";
-			this->homeToolStripMenuItem->Size = System::Drawing::Size(115, 44);
+			this->homeToolStripMenuItem->Size = System::Drawing::Size(115, 48);
 			this->homeToolStripMenuItem->Text = L"Home";
 			// 
 			// sourceToolStripMenuItem
@@ -175,7 +179,7 @@ namespace GitHelper {
 			this->gitToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.875F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->gitToolStripMenuItem->Name = L"gitToolStripMenuItem";
-			this->gitToolStripMenuItem->Size = System::Drawing::Size(74, 44);
+			this->gitToolStripMenuItem->Size = System::Drawing::Size(74, 48);
 			this->gitToolStripMenuItem->Text = L"Git";
 			this->gitToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::gitToolStripMenuItem_Click);
 			// 
@@ -227,7 +231,7 @@ namespace GitHelper {
 			this->addRepo->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->addRepo->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.125F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->addRepo->Location = System::Drawing::Point(17, 85);
+			this->addRepo->Location = System::Drawing::Point(17, 137);
 			this->addRepo->Name = L"addRepo";
 			this->addRepo->Size = System::Drawing::Size(67, 65);
 			this->addRepo->TabIndex = 1;
@@ -240,7 +244,7 @@ namespace GitHelper {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(85, 98);
+			this->label1->Location = System::Drawing::Point(90, 156);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(224, 37);
 			this->label1->TabIndex = 2;
@@ -251,7 +255,7 @@ namespace GitHelper {
 			this->statusLabel->AutoSize = true;
 			this->statusLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.125F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->statusLabel->Location = System::Drawing::Point(5, 165);
+			this->statusLabel->Location = System::Drawing::Point(11, 205);
 			this->statusLabel->Name = L"statusLabel";
 			this->statusLabel->Size = System::Drawing::Size(100, 31);
 			this->statusLabel->TabIndex = 3;
@@ -372,11 +376,34 @@ namespace GitHelper {
 			this->pictureBox3->TabIndex = 15;
 			this->pictureBox3->TabStop = false;
 			// 
+			// lastDir
+			// 
+			this->lastDir->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lastDir->Location = System::Drawing::Point(17, 61);
+			this->lastDir->Name = L"lastDir";
+			this->lastDir->Size = System::Drawing::Size(231, 61);
+			this->lastDir->TabIndex = 16;
+			this->lastDir->Text = L"Use last directory:";
+			this->lastDir->UseVisualStyleBackColor = true;
+			// 
+			// lastDirGet
+			// 
+			this->lastDirGet->AutoSize = true;
+			this->lastDirGet->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lastDirGet->Location = System::Drawing::Point(265, 71);
+			this->lastDirGet->Name = L"lastDirGet";
+			this->lastDirGet->Size = System::Drawing::Size(0, 37);
+			this->lastDirGet->TabIndex = 17;
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1447, 909);
+			this->Controls->Add(this->lastDirGet);
+			this->Controls->Add(this->lastDir);
 			this->Controls->Add(this->pictureBox3);
 			this->Controls->Add(this->pictureBox2);
 			this->Controls->Add(this->pictureBox1);
@@ -438,14 +465,27 @@ private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) 
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 
-	String^ getRepoLocation = locationBox->Text;
-	String^ getMessage = messageBox->Text;
-	String^ importOutput;
-	std::string repolocation_convert = ConvertString(getRepoLocation);
-	std::string getmessage_convert = ConvertString(getMessage);
-	importOutput = gcnew String(commitPushFunction(repolocation_convert, getmessage_convert).c_str());
+	if (String::IsNullOrEmpty(locationBox->Text) || String::IsNullOrEmpty(messageBox->Text)) {
 
-	outputBox->Text = importOutput;
+		MessageBox::Show("Enter the location & message first!", "Git Helper");
+
+	}
+	else {
+
+		String^ getRepoLocation = locationBox->Text;
+		String^ getMessage = messageBox->Text;
+		String^ importOutput;
+		std::string repolocation_convert = ConvertString(getRepoLocation);
+		std::string getmessage_convert = ConvertString(getMessage);
+		importOutput = gcnew String(commitPushFunction(repolocation_convert, getmessage_convert).c_str());
+
+		outputBox->Text = importOutput;
+
+		writeToFile(repolocation_convert);
+		lastDirGet->Text = getRepoLocation;
+	}
+
+	
 }
 private: System::Void exitToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 

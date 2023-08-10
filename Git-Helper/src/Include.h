@@ -11,3 +11,5 @@ std::string getRepoStatus(std::string repoName);
 std::string ConvertString(String^ str);
 std::string commitPushFunction(std::string repoLocation, std::string message);
 void openSite(std::string site);
+void writeToFile(std::string getLocation);
+std::string useLocation();
