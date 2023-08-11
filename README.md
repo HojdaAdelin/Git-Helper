@@ -43,7 +43,7 @@
 
 # Soon
 
-- [ ] Keep last repo directory
+- [x] Keep last repo directory
 - [ ] Better main form
 - [ ] New functions
 - [ ] Dark GUI

@@ -508,7 +508,7 @@ private: System::Void sourceToolStripMenuItem_Click(System::Object^ sender, Syst
 }
 private: System::Void changeLogToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 
-	MessageBox::Show("Version 1.0", "Git Helper");
+	MessageBox::Show("Version RELEASE\n\n-Keep last dir", "Git Helper");
 
 }
 private: System::Void githubToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -609,11 +609,19 @@ private: System::Void lastDir_Click(System::Object^ sender, System::EventArgs^ e
 	std::string location = useLocation();
 	String^ convert_location = gcnew String(location.c_str());
 
-	locationBox->Text = convert_location;
-	String^ systemString = gcnew String(getRepoStatus(location).c_str());
-	statusLabel->Text = System::String::Concat("Status:\n", systemString);
-	label1->Text = convert_location;
+	if (String::IsNullOrEmpty(convert_location)) {
 
+		MessageBox::Show("Directory file empty!", "Git Helper");
+		return;
+	}
+	else {
+
+		locationBox->Text = convert_location;
+		String^ systemString = gcnew String(getRepoStatus(location).c_str());
+		statusLabel->Text = System::String::Concat("Status:\n", systemString);
+		label1->Text = convert_location;
+
+	}
 
 }
 };
