@@ -36,7 +36,7 @@ std::string getRepoStatus(std::string repoName) {
 	std::string line;
 	while (std::getline(writeLog, line))
 	{
-		output_text += line + "\n";
+		output_text += line + "\r\n";
 	}
 
 	writeLog.close();
