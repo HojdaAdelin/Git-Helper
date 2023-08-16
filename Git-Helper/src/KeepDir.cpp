@@ -1,6 +1,7 @@
 #include "Include.h"
 #include "GitFunctions/GitHistory.h"
 #include "GitFunctions/GitPull.h"
+#include "GitFunctions/CreateRepoForm.h"
 #include <fstream>
 #include <iostream>
 #include <string>

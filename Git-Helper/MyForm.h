@@ -577,13 +577,11 @@ private: System::Void createRepoToolStripMenuItem_Click(System::Object^ sender, 
 		location_repo_convert = ConvertString(location_repo);
 		createRepo(location_repo_convert);
 		MessageBox::Show("Repository created!", "Git Helper");
+		writeToFile(location_repo_convert);
+		lastDirGet->Text = location_repo;
 
 	}
-	else {
-
-		MessageBox::Show("Error while creating repository!", "Git Helper");
-
-	}
+	
 
 }
 private: System::Void gitToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {

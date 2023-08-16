@@ -1,4 +1,7 @@
 #pragma once
+#include <string>
+void writeToFile(std::string getLocation);
+std::string useLocation();
 
 namespace GitHelper {
 
@@ -22,8 +25,11 @@ namespace GitHelper {
 			//TODO: Add the constructor code here
 			//
 		}
+	private: System::Windows::Forms::Button^ button3;
+	public: System::Windows::Forms::TextBox^ locationText;
+	private: System::Windows::Forms::Label^ dirLabel;
 
-		System::Windows::Forms::TextBox^ locationText;
+		
 
 	protected:
 		/// <summary>
@@ -59,6 +65,8 @@ namespace GitHelper {
 			this->locationText = (gcnew System::Windows::Forms::TextBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->dirLabel = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// label2
@@ -66,7 +74,7 @@ namespace GitHelper {
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(198, 144);
+			this->label2->Location = System::Drawing::Point(283, 86);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(213, 37);
 			this->label2->TabIndex = 1;
@@ -77,7 +85,7 @@ namespace GitHelper {
 			this->locationText->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->locationText->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->locationText->Location = System::Drawing::Point(204, 184);
+			this->locationText->Location = System::Drawing::Point(204, 248);
 			this->locationText->Name = L"locationText";
 			this->locationText->Size = System::Drawing::Size(381, 44);
 			this->locationText->TabIndex = 3;
@@ -108,11 +116,36 @@ namespace GitHelper {
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &CreateRepoForm::button2_Click);
 			// 
+			// button3
+			// 
+			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button3->Location = System::Drawing::Point(301, 126);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(167, 55);
+			this->button3->TabIndex = 6;
+			this->button3->Text = L"Last dir:";
+			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &CreateRepoForm::button3_Click);
+			// 
+			// dirLabel
+			// 
+			this->dirLabel->AutoSize = true;
+			this->dirLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->dirLabel->Location = System::Drawing::Point(198, 197);
+			this->dirLabel->Name = L"dirLabel";
+			this->dirLabel->Size = System::Drawing::Size(0, 37);
+			this->dirLabel->TabIndex = 7;
+			// 
 			// CreateRepoForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(765, 555);
+			this->Controls->Add(this->dirLabel);
+			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->locationText);
@@ -123,6 +156,7 @@ namespace GitHelper {
 			this->ShowIcon = false;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Git Helper - Create Repo";
+			this->Load += gcnew System::EventHandler(this, &CreateRepoForm::CreateRepoForm_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -139,13 +173,36 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	if (String::IsNullOrEmpty(locationText->Text)) {
 
 		MessageBox::Show("First complete the text box!", "Git Helper");
-		this->DialogResult = System::Windows::Forms::DialogResult::Cancel;
-		this->Close();
+		
 	}
 	else {
 
 		this->DialogResult = System::Windows::Forms::DialogResult::OK;
 		this->Close();
+
+	}
+
+}
+private: System::Void CreateRepoForm_Load(System::Object^ sender, System::EventArgs^ e) {
+
+	std::string dir = useLocation();
+	String^ convert_dir = gcnew String(dir.c_str());
+	dirLabel->Text = convert_dir;
+
+}
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	std::string dir = useLocation();
+	String^ convert_dir = gcnew String(dir.c_str());
+
+	if (String::IsNullOrEmpty(convert_dir)) {
+
+		return;
+
+	}
+	else {
+
+		locationText->Text = convert_dir;
 
 	}
 
