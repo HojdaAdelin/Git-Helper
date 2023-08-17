@@ -28,7 +28,7 @@ std::string commitPushFunction(std::string repoLocation, std::string message) {
 	std::string line;
 	while (std::getline(readLog, line))
 	{
-		outPut += line + "\n";
+		outPut += line + "\r\n";
 	}
 
 	readLog.close();

@@ -127,6 +127,7 @@
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="RepoWindow.cpp" />
     <ClCompile Include="src\CommitPush.cpp" />
+    <ClCompile Include="src\GitFunctions\CheckoutBranch.cpp" />
     <ClCompile Include="src\GitFunctions\CloneRepo.cpp" />
     <ClCompile Include="src\GitFunctions\CloneRepository.cpp" />
     <ClCompile Include="src\GitFunctions\CreateRepoForm.cpp" />
@@ -142,6 +143,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="RepoWindow.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="src\GitFunctions\CheckoutBranch.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="src\GitFunctions\CloneRepository.h">
@@ -165,6 +169,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RepoWindow.resx">
       <DependentUpon>RepoWindow.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\GitFunctions\CheckoutBranch.resx">
+      <DependentUpon>src\GitFunctions\CheckoutBranch.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\GitFunctions\CloneRepository.resx">
       <DependentUpon>src\GitFunctions\CloneRepository.h</DependentUpon>

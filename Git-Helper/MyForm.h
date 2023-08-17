@@ -26,6 +26,8 @@ namespace GitHelper {
 			//TODO: Add the constructor code here
 			//
 		}
+	private: System::Windows::Forms::ToolStripMenuItem^ checkoutBranchToolStripMenuItem;
+	public:
 		System::Windows::Forms::Label^ lastDirGet;
 
 	protected:
@@ -115,6 +117,7 @@ namespace GitHelper {
 			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			this->lastDir = (gcnew System::Windows::Forms::Button());
 			this->lastDirGet = (gcnew System::Windows::Forms::Label());
+			this->checkoutBranchToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->menuStrip1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
@@ -144,83 +147,83 @@ namespace GitHelper {
 			this->homeToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.875F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->homeToolStripMenuItem->Name = L"homeToolStripMenuItem";
-			this->homeToolStripMenuItem->Size = System::Drawing::Size(115, 48);
+			this->homeToolStripMenuItem->Size = System::Drawing::Size(115, 44);
 			this->homeToolStripMenuItem->Text = L"Home";
 			// 
 			// sourceToolStripMenuItem
 			// 
 			this->sourceToolStripMenuItem->Name = L"sourceToolStripMenuItem";
-			this->sourceToolStripMenuItem->Size = System::Drawing::Size(299, 48);
+			this->sourceToolStripMenuItem->Size = System::Drawing::Size(359, 48);
 			this->sourceToolStripMenuItem->Text = L"Source";
 			this->sourceToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::sourceToolStripMenuItem_Click);
 			// 
 			// changeLogToolStripMenuItem
 			// 
 			this->changeLogToolStripMenuItem->Name = L"changeLogToolStripMenuItem";
-			this->changeLogToolStripMenuItem->Size = System::Drawing::Size(299, 48);
+			this->changeLogToolStripMenuItem->Size = System::Drawing::Size(359, 48);
 			this->changeLogToolStripMenuItem->Text = L"Change log";
 			this->changeLogToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::changeLogToolStripMenuItem_Click);
 			// 
 			// exitToolStripMenuItem
 			// 
 			this->exitToolStripMenuItem->Name = L"exitToolStripMenuItem";
-			this->exitToolStripMenuItem->Size = System::Drawing::Size(299, 48);
+			this->exitToolStripMenuItem->Size = System::Drawing::Size(359, 48);
 			this->exitToolStripMenuItem->Text = L"Exit";
 			this->exitToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::exitToolStripMenuItem_Click);
 			// 
 			// gitToolStripMenuItem
 			// 
-			this->gitToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(6) {
+			this->gitToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(7) {
 				this->historyToolStripMenuItem,
 					this->pullToolStripMenuItem, this->githubToolStripMenuItem, this->gitWebToolStripMenuItem, this->createRepoToolStripMenuItem,
-					this->cloneToolStripMenuItem
+					this->cloneToolStripMenuItem, this->checkoutBranchToolStripMenuItem
 			});
 			this->gitToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.875F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->gitToolStripMenuItem->Name = L"gitToolStripMenuItem";
-			this->gitToolStripMenuItem->Size = System::Drawing::Size(74, 48);
+			this->gitToolStripMenuItem->Size = System::Drawing::Size(74, 44);
 			this->gitToolStripMenuItem->Text = L"Git";
 			this->gitToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::gitToolStripMenuItem_Click);
 			// 
 			// historyToolStripMenuItem
 			// 
 			this->historyToolStripMenuItem->Name = L"historyToolStripMenuItem";
-			this->historyToolStripMenuItem->Size = System::Drawing::Size(303, 48);
+			this->historyToolStripMenuItem->Size = System::Drawing::Size(395, 48);
 			this->historyToolStripMenuItem->Text = L"Log";
 			this->historyToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::historyToolStripMenuItem_Click);
 			// 
 			// pullToolStripMenuItem
 			// 
 			this->pullToolStripMenuItem->Name = L"pullToolStripMenuItem";
-			this->pullToolStripMenuItem->Size = System::Drawing::Size(303, 48);
+			this->pullToolStripMenuItem->Size = System::Drawing::Size(395, 48);
 			this->pullToolStripMenuItem->Text = L"Pull";
 			this->pullToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::pullToolStripMenuItem_Click);
 			// 
 			// githubToolStripMenuItem
 			// 
 			this->githubToolStripMenuItem->Name = L"githubToolStripMenuItem";
-			this->githubToolStripMenuItem->Size = System::Drawing::Size(303, 48);
+			this->githubToolStripMenuItem->Size = System::Drawing::Size(395, 48);
 			this->githubToolStripMenuItem->Text = L"Github";
 			this->githubToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::githubToolStripMenuItem_Click);
 			// 
 			// gitWebToolStripMenuItem
 			// 
 			this->gitWebToolStripMenuItem->Name = L"gitWebToolStripMenuItem";
-			this->gitWebToolStripMenuItem->Size = System::Drawing::Size(303, 48);
+			this->gitWebToolStripMenuItem->Size = System::Drawing::Size(395, 48);
 			this->gitWebToolStripMenuItem->Text = L"Git web";
 			this->gitWebToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::gitWebToolStripMenuItem_Click);
 			// 
 			// createRepoToolStripMenuItem
 			// 
 			this->createRepoToolStripMenuItem->Name = L"createRepoToolStripMenuItem";
-			this->createRepoToolStripMenuItem->Size = System::Drawing::Size(303, 48);
+			this->createRepoToolStripMenuItem->Size = System::Drawing::Size(395, 48);
 			this->createRepoToolStripMenuItem->Text = L"Create repo";
 			this->createRepoToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::createRepoToolStripMenuItem_Click);
 			// 
 			// cloneToolStripMenuItem
 			// 
 			this->cloneToolStripMenuItem->Name = L"cloneToolStripMenuItem";
-			this->cloneToolStripMenuItem->Size = System::Drawing::Size(303, 48);
+			this->cloneToolStripMenuItem->Size = System::Drawing::Size(395, 48);
 			this->cloneToolStripMenuItem->Text = L"Clone";
 			this->cloneToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::cloneToolStripMenuItem_Click);
 			// 
@@ -387,6 +390,13 @@ namespace GitHelper {
 			this->lastDirGet->Name = L"lastDirGet";
 			this->lastDirGet->Size = System::Drawing::Size(0, 37);
 			this->lastDirGet->TabIndex = 17;
+			// 
+			// checkoutBranchToolStripMenuItem
+			// 
+			this->checkoutBranchToolStripMenuItem->Name = L"checkoutBranchToolStripMenuItem";
+			this->checkoutBranchToolStripMenuItem->Size = System::Drawing::Size(395, 48);
+			this->checkoutBranchToolStripMenuItem->Text = L"Checkout + Branch";
+			this->checkoutBranchToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::checkoutBranchToolStripMenuItem_Click);
 			// 
 			// MyForm
 			// 
@@ -612,6 +622,12 @@ private: System::Void lastDir_Click(System::Object^ sender, System::EventArgs^ e
 
 }
 private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void checkoutBranchToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	CheckoutBranch^ newCheckoutBranch = gcnew CheckoutBranch();
+	newCheckoutBranch->Show();
+
 }
 };
 }

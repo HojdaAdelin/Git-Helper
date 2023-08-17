@@ -24,7 +24,7 @@
 
 <p align="center">
 
-<img src="Git-Helper/src/Assets/app.png" width="1000" height="650">
+<img src="Git-Helper/src/Assets/app.png" width="1000" height="580">
   
 </p>
 
