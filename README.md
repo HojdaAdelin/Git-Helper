@@ -3,6 +3,7 @@
 <img src="Git-Helper/src/Assets/logo.png" width="300px" height="300px">
 </p>
 
+
 ### Git Helper is a software that make work with [Git](https://git-scm.com/) easier.
 
 # Functions
